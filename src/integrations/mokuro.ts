@@ -69,7 +69,7 @@ try {
         },
     );
 
-    for (const page of document.querySelectorAll('#pagesContainer > div')) {
+    for (const page of document.querySelectorAll('#pagesContainer > div, .pageContainer > div')) {
         visible.observe(page);
     }
 } catch (error) {
