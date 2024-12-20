@@ -42,7 +42,7 @@
             "css": ["content/word.css"]
         },
         {
-            "matches": ["file:///*mokuro*.html", "*://reader.mokuro.app/*"],
+            "matches": ["<all_urls>"],
             "js": ["integrations/mokuro.js"],
             "css": ["content/word.css"]
         },
@@ -111,7 +111,6 @@
         "*://ja.m.wikipedia.org/*",
         "*://app.readwok.com/*",
         "*://*.youtube.com/*",
-        "*://bunpro.jp/*",
-        "*://reader.mokuro.app/*"
+        "*://bunpro.jp/*"
     ]
 }
