@@ -16,4 +16,4 @@ jobs:
               with:
                   node-version: 16
             - run: npm install
-            - run: npx tsx scripts/check.ts
+            - run: npm run check
