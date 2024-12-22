@@ -71,6 +71,11 @@
             "matches": ["*://bunpro.jp/*"],
             "js": ["integrations/bunpro.js"],
             "css": ["content/word.css"]
+        },
+        {
+            "matches": ["<all_urls>"],
+            "js": ["integrations/mokuro_userscript.js"],
+            "css": ["content/word.css"]
         }
     ],
     "background": {
