@@ -7,7 +7,8 @@ const config = loadConfig();
 async function parsePage(tab: browser.tabs.Tab) {
     // Parse the page
     await browser.tabs.insertCSS(tab.id, { file: '/content/word.css', cssOrigin: 'author' });
-    if (config.customWordCSS) await browser.tabs.insertCSS(tab.id, { code: config.customWordCSS, cssOrigin: 'author', allFrames: true });
+    if (config.customWordCSS)
+        await browser.tabs.insertCSS(tab.id, { code: config.customWordCSS, cssOrigin: 'author', allFrames: true });
     browser.tabs.executeScript(tab.id, { file: '/integrations/parse_selection.js' });
 
     // Close the popup
