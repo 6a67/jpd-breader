@@ -99,6 +99,7 @@
         "tabs",
         "activeTab",
         "contextMenus",
+        "<all_urls>",
         "https://jpdb.io/*",
         "*://reader.ttsu.app/*",
         "*://ttu-ebook.web.app/*",

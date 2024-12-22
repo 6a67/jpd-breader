@@ -200,7 +200,7 @@ const messageHandlers: {
 
         if (config.customWordCSS !== oldCSS) {
             for (const port of ports) {
-                browser.tabs.insertCSS(port.sender.tab.id, { code: config.customWordCSS, cssOrigin: 'author' });
+                browser.tabs.insertCSS(port.sender.tab.id, { code: config.customWordCSS, cssOrigin: 'author', allFrames: true });
                 browser.tabs.removeCSS(port.sender.tab.id, { code: oldCSS });
             }
         }
@@ -304,7 +304,7 @@ browser.runtime.onConnect.addListener(port => {
 
     // TODO filter to only url-relevant config options
     post(port, { type: 'updateConfig', config });
-    browser.tabs.insertCSS(port.sender.tab.id, { code: config.customWordCSS, cssOrigin: 'author' });
+    browser.tabs.insertCSS(port.sender.tab.id, { code: config.customWordCSS, cssOrigin: 'author', allFrames: true });
 });
 
 // Context menu (Parse with jpdb)
@@ -325,7 +325,7 @@ async function insertCSS(tabId?: number) {
     // We need to await here, because ordering is significant.
     // The custom styles should load after the default styles, so they can overwrite them
     await browser.tabs.insertCSS(tabId, { file: '/content/word.css', cssOrigin: 'author' });
-    if (config.customWordCSS) await browser.tabs.insertCSS(tabId, { code: config.customWordCSS, cssOrigin: 'author' });
+    if (config.customWordCSS) await browser.tabs.insertCSS(tabId, { code: config.customWordCSS, cssOrigin: 'author', allFrames: true });
 }
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
