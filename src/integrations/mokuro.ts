@@ -133,7 +133,7 @@ if (
 
             const pages = mangaPanel.querySelectorAll('div');
             const page1 = pages[0] as HTMLElement | null;
-            const page2 = pages[1] as HTMLElement | null;
+            // const page2 = pages[1] as HTMLElement | null;
 
             if (!page1) {
                 if (retryCount >= maxRetryCount) {
