@@ -40,6 +40,11 @@ if (
                             length,
                             hasRuby: false,
                         });
+
+                        // Prevent propagation of mousedown on p to prevent dragging when selecting text
+                        p.addEventListener('mousedown', event => {
+                            event.stopPropagation();
+                        });
                     }
                     return fragments;
                 });
